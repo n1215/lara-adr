@@ -3,6 +3,14 @@
 - 共通のDomainに対してResponderを入れ替えて、HTML, JSONのHTTPレスポンス + コンソールコマンドを実装
 
 
+# 準備
+
+    git clone https://github.com/n1215/lara-adr
+    cd lara-adr
+    composer install
+    cp .env.example .env
+    php artisan key:generate
+
 # Web API
 
     php artisan serve
@@ -15,6 +23,7 @@
 - Domain: \App\Domains\Users\UserShowUseCase
 - Action: \App\Http\Actions\Api\Users\UserShowAction
 - Responder: \App\Http\Responders\UserShowJsonResponder
+
 
 # Web HTML
 
