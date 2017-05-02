@@ -4,6 +4,7 @@ namespace App\Http\Responders\Users;
 
 
 use App\Domains\Users\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\ResponseFactory;
 
 class UserShowJsonResponder
@@ -13,20 +14,12 @@ class UserShowJsonResponder
      */
     private $responseFactory;
 
-    /**
-     * UserShowJsonResponder constructor.
-     * @param ResponseFactory $responseFactory
-     */
     public function __construct(ResponseFactory $responseFactory)
     {
         $this->responseFactory = $responseFactory;
     }
 
-    /**
-     * @param User|null $user
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function respond(User $user = null)
+    public function respond(User $user = null): JsonResponse
     {
         if(is_null($user)) {
             return $this->responseFactory->json([

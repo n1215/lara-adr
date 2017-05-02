@@ -4,6 +4,7 @@ namespace App\Http\Actions\Api\Users;
 
 use App\Http\Responders\Users\UserShowJsonResponder;
 use App\Domains\Users\UserShowUseCase;
+use Illuminate\Http\JsonResponse;
 
 class UserShowAction
 {
@@ -17,24 +18,15 @@ class UserShowAction
      */
     private $responder;
 
-    /**
-     * UserShowAction constructor.
-     * @param UserShowUseCase $useCase
-     * @param UserShowJsonResponder $responder
-     */
     public function __construct(UserShowUseCase $useCase, UserShowJsonResponder $responder)
     {
         $this->useCase = $useCase;
         $this->responder = $responder;
     }
 
-    /**
-     * @param int $userId
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function __invoke($userId)
+    public function __invoke(string $userId): JsonResponse
     {
-        $user = $this->useCase->run($userId);
+        $user = $this->useCase->run(intval($userId));
         return $this->responder->respond($user);
     }
 }

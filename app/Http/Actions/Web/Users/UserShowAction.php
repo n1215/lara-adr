@@ -4,6 +4,7 @@ namespace App\Http\Actions\Web\Users;
 
 use App\Http\Responders\Users\UserShowHtmlResponder;
 use App\Domains\Users\UserShowUseCase;
+use Illuminate\Http\Response;
 
 class UserShowAction
 {
@@ -17,24 +18,15 @@ class UserShowAction
      */
     private $responder;
 
-    /**
-     * UserShowAction constructor.
-     * @param UserShowUseCase $useCase
-     * @param UserShowHtmlResponder $responder
-     */
     public function __construct(UserShowUseCase $useCase, UserShowHtmlResponder $responder)
     {
         $this->useCase = $useCase;
         $this->responder = $responder;
     }
 
-    /**
-     * @param int $userId
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function __invoke($userId)
+    public function __invoke(string $userId): Response
     {
-        $user = $this->useCase->run($userId);
+        $user = $this->useCase->run(intval($userId));
         return $this->responder->respond($user);
     }
 }

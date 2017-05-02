@@ -13,20 +13,12 @@ class UserShowHtmlResponder
      */
     private $viewFactory;
 
-    /**
-     * UserShowJsonResponder constructor.
-     * @param Factory $viewFactory
-     */
     public function __construct(Factory $viewFactory)
     {
         $this->viewFactory = $viewFactory;
     }
 
-    /**
-     * @param User|null $user
-     * @return \Illuminate\Http\Response
-     */
-    public function respond(User $user = null)
+    public function respond(User $user = null): Response
     {
         if(is_null($user)) {
             $view = $this->viewFactory->make('errors.404');

@@ -9,27 +9,23 @@ class UserName
      */
     private $userName;
 
-    /**
-     * UserName constructor.
-     * @param string $userName
-     */
-    public function __construct($userName)
+    public function __construct(string $userName)
     {
         $this->userName = $userName;
     }
 
     /**
-     * @return string
+     * 文字列に変換
      */
-    public function __toString()
+    public function __toString() : string
     {
         return strval($this->userName);
     }
 
     /**
-     * @return string
+     * スカラー値を取得
      */
-    public function getValue()
+    public function getValue() : string
     {
         return $this->userName;
     }

@@ -12,19 +12,12 @@ class UserShowConsoleResponder
      */
     private $output;
 
-    /**
-     * UserShowConsoleResponder constructor.
-     * @param OutputStyle $output
-     */
     public function __construct(OutputStyle $output)
     {
         $this->output = $output;
     }
 
-    /**
-     * @param User|null $user
-     */
-    public function respond(User $user = null)
+    public function respond(User $user = null): void
     {
         if(is_null($user)) {
             $this->output->error("ユーザーが見つかりません");

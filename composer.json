@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "n1215/lara-adr",
+    "description": "Action-Domain-Responder pattern with laravel",
+    "keywords": ["adr", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
     },

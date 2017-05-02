@@ -9,27 +9,23 @@ class UserId
      */
     private $userId;
 
-    /**
-     * UserId constructor.
-     * @param int $userId
-     */
-    public function __construct($userId)
+    public function __construct(int $userId)
     {
-        $this->userId = intval($userId);
+        $this->userId = $userId;
     }
 
     /**
-     * @return string
+     * 文字列に変換
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->userId);
     }
 
     /**
-     * @return int
+     * スカラー値を取得
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->userId;
     }

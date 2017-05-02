@@ -26,10 +26,6 @@ class UserShowCommand extends Command
      */
     private $useCase;
 
-    /**
-     * ShowUser constructor.
-     * @param UserShowUseCase $useCase
-     */
     public function __construct(UserShowUseCase $useCase)
     {
         parent::__construct();
@@ -39,7 +35,7 @@ class UserShowCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {

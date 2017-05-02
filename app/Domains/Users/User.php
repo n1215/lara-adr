@@ -2,9 +2,9 @@
 
 namespace App\Domains\Users;
 
-
 class User implements \JsonSerializable
 {
+
     /**
      * @var UserId
      */
@@ -15,11 +15,6 @@ class User implements \JsonSerializable
      */
     private $userName;
 
-    /**
-     * User constructor.
-     * @param UserId $userId
-     * @param UserName $userName
-     */
     public function __construct(UserId $userId, UserName $userName)
     {
         $this->userId = $userId;
@@ -28,26 +23,24 @@ class User implements \JsonSerializable
 
     /**
      * ユーザー名を取得
-     * @return UserName
      */
-    public function getName()
+    public function getName() : UserName
     {
         return $this->userName;
     }
 
     /**
      * ユーザーIDを取得
-     * @return UserId
      */
-    public function getId()
+    public function getId() : UserId
     {
         return $this->userId;
     }
 
     /**
-     * @return array
+     * JSON用の配列に変換
      */
-    public function jsonSerialize()
+    public function jsonSerialize() : array
     {
         $rawId = $this->userId->getValue();
         $rawName = $this->userName->getValue();
