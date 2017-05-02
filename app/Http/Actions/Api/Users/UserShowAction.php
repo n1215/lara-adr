@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Web\Users;
+namespace App\Http\Actions\Api\Users;
 
-use App\Http\Responders\Users\UserShowHtmlResponder;
+use App\Http\Responders\Users\UserShowJsonResponder;
 use App\Domains\Users\UserShowUseCase;
 
 class UserShowAction
@@ -13,16 +13,16 @@ class UserShowAction
     private $useCase;
 
     /**
-     * @var UserShowHtmlResponder
+     * @var UserShowJsonResponder
      */
     private $responder;
 
     /**
      * UserShowAction constructor.
      * @param UserShowUseCase $useCase
-     * @param UserShowHtmlResponder $responder
+     * @param UserShowJsonResponder $responder
      */
-    public function __construct(UserShowUseCase $useCase, UserShowHtmlResponder $responder)
+    public function __construct(UserShowUseCase $useCase, UserShowJsonResponder $responder)
     {
         $this->useCase = $useCase;
         $this->responder = $responder;

@@ -13,7 +13,7 @@
 
 ### Classes
 - Domain: \App\Domains\Users\UserShowUseCase
-- Action: \App\Http\Controllers\Api\Users\UserShowAction
+- Action: \App\Http\Actions\Api\Users\UserShowAction
 - Responder: \App\Http\Responders\UserShowJsonResponder
 
 # Web HTML
@@ -26,7 +26,7 @@
 
 ### Classes
 - Domain: \App\Domains\Users\UserShowUseCase
-- Action: \App\Http\Controllers\Web\Users\UserShowAction
+- Action: \App\Http\Actions\Web\Users\UserShowAction
 - Responder: \App\Http\Responders\UserShowHtmlResponder
 
 
