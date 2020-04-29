@@ -12,5 +12,5 @@ interface UserRepositoryInterface
      * @param UserId $userId
      * @return User|null
      */
-    public function find(UserId $userId) : ?User;
+    public function find(UserId $userId): ?User;
 }

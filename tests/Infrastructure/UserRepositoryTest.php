@@ -20,15 +20,19 @@ class UserRepositoryTest extends TestCase
     {
         parent::setUp();
 
-        $users = collect([
-            [1, 'Tom'],
-            [2, 'Jack'],
-        ])->map(function (array $userData) {
-            return new User(
-                new UserId($userData[0]),
-                new UserName($userData[1])
-            );
-        });
+        $users = collect(
+            [
+                [1, 'Tom'],
+                [2, 'Jack'],
+            ]
+        )->map(
+            function (array $userData) {
+                return new User(
+                    new UserId($userData[0]),
+                    new UserName($userData[1])
+                );
+            }
+        );
         $this->repository = new UserRepository($users);
     }
 

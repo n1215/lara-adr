@@ -40,9 +40,9 @@ class UserShowCommand extends Command
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
-        $userId = (int) $this->argument('userId');
+        $userId = (int)$this->argument('userId');
         $user = $this->useCase->run($userId);
 
         $responder = new UserShowConsoleResponder($this->output);

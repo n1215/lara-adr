@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace N1215\LaraAdr\Domains;
 
-class User implements \JsonSerializable
-{
+use JsonSerializable;
 
+class User implements JsonSerializable
+{
     /**
      * @var UserId
      */
@@ -26,7 +27,7 @@ class User implements \JsonSerializable
     /**
      * ユーザー名を取得
      */
-    public function getName() : UserName
+    public function getName(): UserName
     {
         return $this->userName;
     }
@@ -34,7 +35,7 @@ class User implements \JsonSerializable
     /**
      * ユーザーIDを取得
      */
-    public function getId() : UserId
+    public function getId(): UserId
     {
         return $this->userId;
     }
@@ -42,7 +43,7 @@ class User implements \JsonSerializable
     /**
      * JSON用の配列に変換
      */
-    public function jsonSerialize() : array
+    public function jsonSerialize(): array
     {
         $rawId = $this->userId->getValue();
         $rawName = $this->userName->getValue();

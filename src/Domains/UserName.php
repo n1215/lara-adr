@@ -9,26 +9,26 @@ class UserName
     /**
      * @var string
      */
-    private $userName;
+    private $value;
 
-    public function __construct(string $userName)
+    public function __construct(string $value)
     {
-        $this->userName = $userName;
+        $this->value = $value;
     }
 
     /**
      * 文字列に変換
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return strval($this->userName);
+        return $this->value;
     }
 
     /**
      * スカラー値を取得
      */
-    public function getValue() : string
+    public function getValue(): string
     {
-        return $this->userName;
+        return $this->value;
     }
 }

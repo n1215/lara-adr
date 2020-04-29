@@ -9,11 +9,11 @@ class UserId
     /**
      * @var int
      */
-    private $userId;
+    private $value;
 
-    public function __construct(int $userId)
+    public function __construct(int $value)
     {
-        $this->userId = $userId;
+        $this->value = $value;
     }
 
     /**
@@ -21,7 +21,7 @@ class UserId
      */
     public function __toString(): string
     {
-        return strval($this->userId);
+        return (string)$this->value;
     }
 
     /**
@@ -29,6 +29,6 @@ class UserId
      */
     public function getValue(): int
     {
-        return $this->userId;
+        return $this->value;
     }
 }

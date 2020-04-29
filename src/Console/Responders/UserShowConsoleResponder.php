@@ -21,7 +21,7 @@ class UserShowConsoleResponder
 
     public function respond(User $user = null): void
     {
-        if($user === null) {
+        if ($user === null) {
             $this->output->error('ユーザーが見つかりません');
             return;
         }

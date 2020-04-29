@@ -25,7 +25,7 @@ class UserRepository implements UserRepositoryInterface
     {
         $this->users = collect();
 
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $this->addUser($user);
         }
     }
@@ -45,9 +45,10 @@ class UserRepository implements UserRepositoryInterface
      */
     public function find(UserId $userId): ?User
     {
-        return $this->users->first(function(User $user) use ($userId) {
-
-            return $user->getId()->getValue() === $userId->getValue();
-        });
+        return $this->users->first(
+            function (User $user) use ($userId): bool {
+                return $user->getId()->getValue() === $userId->getValue();
+            }
+        );
     }
 }
